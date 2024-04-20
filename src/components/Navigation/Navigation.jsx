@@ -1,20 +1,25 @@
 import { Link } from "react-router-dom";
-import Home from "../../pages/Home/Home";
+import { useState } from "react";
+// import Home from "../../pages/Home/Home";
 
-const cities = ['london', 'paris']
+import SearchInput from "../SearchInput/SearchInput";
+import CitiesList from "../CitiesList/CitiesList";
+
 
 const Navigation = () => {
+  const [cities, setCities] = useState([])
+
+  const handleInputSubmision = (value) => {
+    setCities([...cities, value])
+  }
   return (
     <nav>
+      <SearchInput handleInputSubmision={handleInputSubmision} />
       <ul>
         <li>
           <Link to='/'>Home</Link>
         </li>
-        {cities.map(city => (
-          <li>
-            <Link to={`/city/${city}`}>{city}</Link>
-          </li>
-        ))}
+        <CitiesList cities={cities} />
       </ul>
     </nav>
   )
