@@ -10,6 +10,7 @@ const Navigation = () => {
   const [cities, setCities] = useState([])
 
   const handleInputSubmision = (value) => {
+    if(cities.includes(value)) return
     setCities([...cities, value])
   }
   return (
