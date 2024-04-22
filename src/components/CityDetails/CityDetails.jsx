@@ -1,6 +1,7 @@
-import { Header } from "../Header/Header"
 
+import { Header } from "../Header/Header"
 import { WeatherCard } from "../WeatherCard/WeatherCard"
+import { WeatherSideBar } from "../WeatherSideBar/WeatherSideBar"
 
 export const CityDetails = ({ weatherInfo }) => {
   const data = weatherInfo || {}
@@ -16,10 +17,8 @@ export const CityDetails = ({ weatherInfo }) => {
   const weatherIconDesc = weather && weather[0].description
   const visibilityInFt = visibility
   const windSpeed = wind && wind.speed
-  const cloundPercent = clouds && clouds.all
-  const humidityPercent = main && main.humidity
-
-
+  const cloundPercent = clouds && Math.round(clouds.all)
+  const humidityPercent = main && Math.round(main.humidity)
 
   return (
     <div>
@@ -34,6 +33,12 @@ export const CityDetails = ({ weatherInfo }) => {
         <WeatherCard type='max' info={maxTemp} weatherIconDesc={weatherIconDesc} />
         <WeatherCard type='min' info={minTemp} weatherIconDesc={weatherIconDesc} />
         <WeatherCard type='country' info={country} weatherIconDesc={weatherIconDesc} />
+      </div>
+      <div>
+        <WeatherSideBar type='visibility' info={visibilityInFt} />
+        <WeatherSideBar type='wind' info={windSpeed} />
+        <WeatherSideBar type='clouds' info={cloundPercent} />
+        <WeatherSideBar type='humidity' info={humidityPercent} />
       </div>
     </div>
   )
