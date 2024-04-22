@@ -9,10 +9,13 @@ import CitiesList from "../CitiesList/CitiesList";
 const Navigation = () => {
   const [cities, setCities] = useState([])
 
-  const handleInputSubmision = (value) => {
-    if(cities.includes(value)) return
-    setCities([...cities, value])
+  const handleInputSubmision = (city) => {
+    if(cities.includes(city)) return
+    city = city[0].toUpperCase() + city.slice(1).toLowerCase()
+    setCities([...cities, city])
   }
+
+
   return (
     <nav>
       <SearchInput handleInputSubmision={handleInputSubmision} />
