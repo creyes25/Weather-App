@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import axios from 'axios'
 
 import {Header} from '../../components/Header/Header'
-import { CityDetails } from "../../components/CityDetails/CityDetails"
+import { CityDetails } from "../../components/Weather/Weather"
 
 
 const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=`
