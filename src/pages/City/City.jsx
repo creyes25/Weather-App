@@ -18,7 +18,6 @@ const City = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [error , setError] = useState(false)
 
-
   const getCityWeather = async () => {
     try {
       setError(false)
@@ -35,8 +34,6 @@ const City = () => {
   useEffect(()=> {
     getCityWeather()
   }, [cityId])
-
-
 
   return (
     <div>

@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react"
 
-
-
 export const WeatherSideBar = ({type, info}) => {
   const [title, setTitle] = useState('')
   const [metricOrSymbol , setMetricOrSymbol] = useState('')

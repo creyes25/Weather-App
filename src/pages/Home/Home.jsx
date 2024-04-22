@@ -1,12 +1,9 @@
-import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
-
 
 import { CityDetails } from "../../components/CityDetails/CityDetails"
 
 const apiId = 'c280715d3252b3470097491122ae9ce1'
-
 
 const Home = () => {
   const [weatherInfo, setWeatherInfo] = useState({})

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 
-
 export const WeatherCard = ({type, info, weatherIconDesc}) => {
   const [title, setTitle] = useState('')
 
