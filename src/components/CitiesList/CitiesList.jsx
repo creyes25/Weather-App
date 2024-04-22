@@ -6,8 +6,8 @@ const CitiesList = ({cities}) => {
   return (
     <>
     {cities.map(city => (
-      <li>
-        <Link to={`/city/${city}`}>{city}</Link>
+      <li key={city}>
+        <Link key={city} to={`/city/${city}`}>{city}</Link>
       </li>
     ))}
     </>
