@@ -2,6 +2,7 @@ import { useState,useEffect } from "react"
 import { useParams } from "react-router-dom"
 import axios from 'axios'
 
+import {Header} from '../../components/Header/Header'
 import { CityDetails } from "../../components/CityDetails/CityDetails"
 
 
@@ -40,6 +41,7 @@ const City = () => {
   return (
     <div>
       {isLoading && <div>Is Loading</div>}
+      <Header />
       {error 
         ? 
       <h1>There was an error</h1> 
