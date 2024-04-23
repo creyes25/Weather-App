@@ -27,6 +27,7 @@ const City = () => {
     } catch (error) {
       setIsLoading(false)
       setError(true)
+      console.log(error)
     }
   }
 

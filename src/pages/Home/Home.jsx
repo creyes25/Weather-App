@@ -33,7 +33,6 @@ const Home = () => {
       setIsLoading(true)
       const {data} = await axios(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}&units=imperial`)
       setWeatherInfo(data)
-      console.log(weatherInfo)
       setIsLoading(false)
     } catch (error) {
       setIsLoading(false)
