@@ -1,5 +1,8 @@
 import { useState } from "react"
 
+// styles
+import { InputContainter, Input } from "./SearchInput.styles"
+
 
 const SearchInput = ({handleInputSubmision}) => {
   const [inputValue, setInputValue] = useState('')
@@ -16,10 +19,12 @@ const SearchInput = ({handleInputSubmision}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text"
-      placeholder="Search for location..."
-      value={inputValue}
-      onChange={handleChange} />
+      <InputContainter>
+        <Input type="text"
+        placeholder="Search for location..."
+        value={inputValue}
+        onChange={handleChange} />
+      </InputContainter>
     </form>
   )
 }
