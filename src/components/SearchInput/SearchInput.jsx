@@ -10,7 +10,7 @@ const SearchInput = ({handleInputSubmision}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    handleInputSubmision(inputValue)
+    handleInputSubmision(inputValue.toLocaleLowerCase())
     setInputValue('')
   }
 

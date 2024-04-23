@@ -11,7 +11,6 @@ const Navigation = () => {
 
   const handleInputSubmision = (city) => {
     if(cities.includes(city)) return
-    city = city[0].toUpperCase() + city.slice(1).toLowerCase()
     setCities([...cities, city])
   }
 
