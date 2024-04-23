@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 // styles
-import { InputContainter, Input } from "./SearchInput.styles"
+import { InputContainter, Input, SearchIcon, Icon } from "./SearchInput.styles"
 
 
 const SearchInput = ({handleInputSubmision}) => {
@@ -20,6 +20,12 @@ const SearchInput = ({handleInputSubmision}) => {
   return (
     <form onSubmit={handleSubmit}>
       <InputContainter>
+      <SearchIcon>
+        <Icon />
+
+      </SearchIcon>
+
+
         <Input type="text"
         placeholder="Search for location..."
         value={inputValue}

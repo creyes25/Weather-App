@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import {MagnifyingGlassIcon} from '@heroicons/react/24/solid'
+
 
 export const InputContainter = styled.div`
   margin: 10px auto;
@@ -7,10 +9,11 @@ export const InputContainter = styled.div`
   height: 10px;
   width: 30%;
   height: 30px;
-  padding: 10px 5px;
+  padding: 10px 5px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
 `
 
 export const Input = styled.input`
@@ -23,5 +26,20 @@ export const Input = styled.input`
   &:focus {
     outline: none;
   }
-
 `;
+
+export const SearchIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  height: 10%;
+  margin-left: 5px;
+
+`
+
+export const Icon = styled(MagnifyingGlassIcon)`
+  width: 22px;
+  height: 22px;
+`
+
