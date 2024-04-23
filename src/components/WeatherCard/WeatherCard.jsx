@@ -30,7 +30,12 @@ export const WeatherCard = ({type, info, weatherIconDesc}) => {
   return (
     <div>
       <h3>{title}</h3>
+      {(title !== 'Country') 
+      ?
+      <h2>{info}&deg;F</h2>
+      :
       <h2>{info}</h2>
+    }
       <h3>{weatherIconDesc}</h3>
     </div>
   )

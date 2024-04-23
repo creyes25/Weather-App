@@ -24,7 +24,7 @@ export const CityDetails = ({ weatherInfo }) => {
       <Header />
       <div>
         <h2>{weatherIconName}</h2>
-        <h1>{currentTemp}</h1>
+        <h1>{currentTemp}&deg;F</h1>
         <h2>{cityName}</h2>
       </div>
       <div>
