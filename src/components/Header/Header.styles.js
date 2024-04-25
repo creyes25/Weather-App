@@ -4,9 +4,10 @@ export const HeaderCont = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  gap: 1em;
+  padding: 15px 10px;
   border-bottom: 1px solid #F2F2F2;
-  margin: 10px auto;
+  margin: 0 auto 10px;
 
   h1 {
     text-align: left;
@@ -14,6 +15,6 @@ export const HeaderCont = styled.div`
   }
 
   p {
-    width: 400px;
+    max-width: 450px;
   }
 `

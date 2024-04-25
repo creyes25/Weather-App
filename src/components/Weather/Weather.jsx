@@ -2,6 +2,9 @@
 import { Header } from "../Header/Header"
 import { WeatherCard } from "../WeatherCard/WeatherCard"
 import { WeatherSideBar } from "../WeatherSideBar/WeatherSideBar"
+
+import { WeatherCont, WeatherInfoWrapper, LeftWeatherCont, RightWeatherCont, WeatherInfo, WeatherDeatailsCont } from "./Weather.styles"
+
 export const Weather = ({ weatherInfo }) => {
   const data = weatherInfo || {}
   const { name, main, sys, weather, wind, visibility, clouds } = data || {}
@@ -20,25 +23,35 @@ export const Weather = ({ weatherInfo }) => {
   const humidityPercent = main && Math.round(main.humidity)
 
   return (
-    <div>
+    <WeatherCont>
       <Header />
-      <div>
-        <h2>{weatherIconName}</h2>
-        <h1>{currentTemp}&deg;F</h1>
-        <h2>{cityName}</h2>
-      </div>
-      <div>
-        <WeatherCard type='feelLike' info={feelsLikeTemp} weatherIconDesc={weatherIconDesc} />
-        <WeatherCard type='max' info={maxTemp} weatherIconDesc={weatherIconDesc} />
-        <WeatherCard type='min' info={minTemp} weatherIconDesc={weatherIconDesc} />
-        <WeatherCard type='country' info={country} weatherIconDesc={weatherIconDesc} />
-      </div>
-      <div>
-        <WeatherSideBar type='visibility' info={visibilityInFt} />
-        <WeatherSideBar type='wind' info={windSpeed} />
-        <WeatherSideBar type='clouds' info={cloundPercent} />
-        <WeatherSideBar type='humidity' info={humidityPercent} />
-      </div>
-    </div>
+      <WeatherInfoWrapper>
+        <LeftWeatherCont>
+          <WeatherInfo>
+            <h2>{weatherIconName}</h2>
+            <h1>{currentTemp}&deg;F</h1>
+            <h2>{cityName}</h2>
+          </WeatherInfo>
+          <WeatherDeatailsCont>
+            <WeatherCard type='feelLike' info={feelsLikeTemp} weatherIconDesc={weatherIconDesc} />
+            <WeatherCard type='max' info={maxTemp} weatherIconDesc={weatherIconDesc} />
+            <WeatherCard type='min' info={minTemp} weatherIconDesc={weatherIconDesc} />
+            <WeatherCard type='country' info={country} weatherIconDesc={weatherIconDesc} />
+          </WeatherDeatailsCont>
+        </LeftWeatherCont>
+
+        <RightWeatherCont>
+          <div>
+            <WeatherSideBar type='visibility' info={visibilityInFt} />
+            <WeatherSideBar type='wind' info={windSpeed} />
+            <WeatherSideBar type='clouds' info={cloundPercent} />
+            <WeatherSideBar type='humidity' info={humidityPercent} />
+          </div>
+
+        </RightWeatherCont>
+
+
+      </WeatherInfoWrapper>
+    </WeatherCont>
   )
 }
