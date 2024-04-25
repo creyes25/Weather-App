@@ -3,17 +3,16 @@ import {MagnifyingGlassIcon} from '@heroicons/react/24/solid'
 
 
 export const InputContainter = styled.div`
-  margin: 10px auto;
+  margin: 30px auto;
   border-radius : 10px;
   background-color: #F5F5F5;
-  height: 10px;
-  width: 30%;
+  width: 250px;
   height: 30px;
   padding: 10px 5px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 `
 
 export const Input = styled.input`

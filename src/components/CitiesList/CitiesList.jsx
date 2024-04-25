@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+// styles
+import { CityLi, CityLiCont, CountryIconCont } from "./CitiesList.styles";
+
 
 
 const CitiesList = ({cities}) => {
@@ -22,9 +25,17 @@ const CitiesList = ({cities}) => {
   return (
     <>
     {formatedCities.map(city => (
-      <li key={city}>
-        <Link key={city} to={`/city/${city}`}>{city}</Link>
-      </li>
+      <CityLi>
+        <Link key={city} to={`/city/${city}`}>
+          <CityLiCont>
+            <CountryIconCont>
+              
+            </CountryIconCont>
+            {city}
+          </CityLiCont>
+        </Link>
+      </CityLi>
+  
     ))}
     </>
   )

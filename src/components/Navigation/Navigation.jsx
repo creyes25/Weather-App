@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 // import Home from "../../pages/Home/Home";
 
+import {NavigationCont, UnorderedList, HomeLinkCont, HomeWrapper, CurrentLocationWrapper, CurrentCountryIcon} from './Navigation.styles'
+
+
 import SearchInput from "../SearchInput/SearchInput";
 import CitiesList from "../CitiesList/CitiesList";
 
@@ -16,15 +19,23 @@ const Navigation = () => {
 
 
   return (
-    <nav>
+    <NavigationCont>
+      <HomeLinkCont>
+        <Link to='/'>
+          <HomeWrapper>
+            <CurrentCountryIcon></CurrentCountryIcon>
+            <CurrentLocationWrapper>
+              <h5>Current Location</h5>
+              <h5>Home</h5>
+            </CurrentLocationWrapper>
+          </HomeWrapper>
+        </Link>
+      </HomeLinkCont>
       <SearchInput handleInputSubmision={handleInputSubmision} />
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
+      <UnorderedList>
         <CitiesList cities={cities} />
-      </ul>
-    </nav>
+      </UnorderedList>
+    </NavigationCont>
   )
 }
 
