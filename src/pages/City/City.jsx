@@ -2,7 +2,7 @@ import { useState,useEffect } from "react"
 import { useParams } from "react-router-dom"
 import axios from 'axios'
 
-import { CityDetails } from "../../components/Weather/Weather"
+import { Weather } from "../../components/Weather/Weather"
 
 
 const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=`
@@ -42,7 +42,7 @@ const City = () => {
         ? 
       <h1>There was an error</h1> 
         : 
-      <CityDetails weatherInfo={weatherInfo} error={error} />}
+      <Weather weatherInfo={weatherInfo} error={error} />}
       
     </div>
   )

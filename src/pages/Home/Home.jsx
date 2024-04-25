@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-import { CityDetails } from "../../components/Weather/Weather"
+import { Weather } from "../../components/Weather/Weather"
 
 const apiId = 'c280715d3252b3470097491122ae9ce1'
 
@@ -51,7 +51,7 @@ const Home = () => {
         ? 
       <h1>There was an error</h1> 
         : 
-      <CityDetails weatherInfo={weatherInfo} error={error} />}
+      <Weather weatherInfo={weatherInfo} error={error} />}
       
     </div>
   )

@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const NavigationCont = styled.nav`
-  width: 350px;
+  max-width: 350px;
   margin-left: 15px;
   padding: 10px;
   text-align: center;
+  border-right: 1px solid #F2F2F2;
 `
 
 

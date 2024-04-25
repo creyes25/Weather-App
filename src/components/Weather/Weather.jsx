@@ -2,7 +2,7 @@
 import { Header } from "../Header/Header"
 import { WeatherCard } from "../WeatherCard/WeatherCard"
 import { WeatherSideBar } from "../WeatherSideBar/WeatherSideBar"
-export const CityDetails = ({ weatherInfo }) => {
+export const Weather = ({ weatherInfo }) => {
   const data = weatherInfo || {}
   const { name, main, sys, weather, wind, visibility, clouds } = data || {}
 

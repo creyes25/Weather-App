@@ -12,6 +12,5 @@ export const AppDiv = styled.div`
   // text-align: center;
   display: flex;
   justify-content: space-between;
-  gap: 5em;
 
 `
