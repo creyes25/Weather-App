@@ -20,7 +20,6 @@ export const HomeLinkCont = styled.div`
   height: 45px;
   padding: 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
   margin: 10px auto;
 
@@ -38,7 +37,7 @@ export const HomeLinkCont = styled.div`
 
 export const HomeWrapper = styled.div`
   display: flex;
-  justify-content: ;
+  justify-content:left ;
   align-items: center;
   width: 100%;
   gap: 1em;
@@ -52,6 +51,8 @@ export const CurrentCountryIcon = styled.div`
 `
 
 export const CurrentLocationWrapper = styled.div`
-
+  h5 {
+    margin: 0;
+  }
 
 `
