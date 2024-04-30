@@ -2,15 +2,18 @@ import styled from "styled-components";
 
 export const AppDiv = styled.div`
   * {
-    // margin: 0;
-    // padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   }
 
-  // text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  overflow-x: hidden;
+  padding: 10px;
+  
+  @media screen and (max-width: 800px) {
+    overflow-x: auto;
+  }
 
 `

@@ -41,13 +41,10 @@ export const Weather = ({ weatherInfo }) => {
         </LeftWeatherCont>
 
         <RightWeatherCont>
-          <div>
             <WeatherSideBar type='visibility' info={visibilityInFt} />
             <WeatherSideBar type='wind' info={windSpeed} />
             <WeatherSideBar type='clouds' info={cloundPercent} />
             <WeatherSideBar type='humidity' info={humidityPercent} />
-          </div>
-
         </RightWeatherCont>
 
 

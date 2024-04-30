@@ -17,4 +17,10 @@ export const HeaderCont = styled.div`
   p {
     max-width: 450px;
   }
+
+  @media screen and (max-width: 1220px ) {
+    p {
+      display: none;
+    }
+  }
 `
