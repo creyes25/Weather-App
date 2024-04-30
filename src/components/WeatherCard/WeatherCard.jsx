@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { WeatherCardCont } from "./WeatherCard.styles"
 
 export const WeatherCard = ({type, info, weatherIconDesc}) => {
   const [title, setTitle] = useState('')
@@ -28,7 +29,7 @@ export const WeatherCard = ({type, info, weatherIconDesc}) => {
   },[type])
 
   return (
-    <div>
+    <WeatherCardCont>
       <h3>{title}</h3>
       {(title !== 'Country') 
       ?
@@ -36,7 +37,7 @@ export const WeatherCard = ({type, info, weatherIconDesc}) => {
       :
       <h2>{info}</h2>
     }
-      <h3>{weatherIconDesc}</h3>
-    </div>
+      <h4>{weatherIconDesc}</h4>
+    </WeatherCardCont>
   )
 }
