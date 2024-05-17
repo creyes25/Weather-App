@@ -20,15 +20,15 @@ const City = () => {
     getWeather(cityId, setIsLoading, setError, setWeatherInfo)
   }, [cityId])
 
-  
+
   return (
     <div>
-      {isLoading && <div>Is Loading</div>}
-      {error 
+      {/* {isLoading && <div>Is Loading</div>} */}
+      {error
         ? 
       <h1>There was an error</h1> 
         : 
-      <Weather weatherInfo={weatherInfo} error={error} />}
+      <Weather weatherInfo={weatherInfo} isLoading={isLoading} />}
       
     </div>
   )

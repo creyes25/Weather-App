@@ -5,7 +5,7 @@ import { WeatherSideBar } from "../WeatherSideBar/WeatherSideBar"
 
 import { WeatherCont, WeatherInfoWrapper, LeftWeatherCont, RightWeatherCont, WeatherInfo, WeatherDeatailsCont } from "./Weather.styles"
 
-export const Weather = ({ weatherInfo }) => {
+export const Weather = ({ weatherInfo, isLoading }) => {
   const data = weatherInfo || {}
   const { name, main, sys, weather, wind, visibility, clouds } = data || {}
 
@@ -25,30 +25,33 @@ export const Weather = ({ weatherInfo }) => {
   return (
     <WeatherCont>
       <Header />
-      <WeatherInfoWrapper>
-        <LeftWeatherCont>
-          <WeatherInfo>
-            <h2>{weatherIconName}</h2>
-            <h1>{currentTemp}&deg;F</h1>
-            <h2>{cityName}</h2>
-          </WeatherInfo>
-          <WeatherDeatailsCont>
-            <WeatherCard type='feelLike' info={feelsLikeTemp} weatherIconDesc={weatherIconDesc} />
-            <WeatherCard type='max' info={maxTemp} weatherIconDesc={weatherIconDesc} />
-            <WeatherCard type='min' info={minTemp} weatherIconDesc={weatherIconDesc} />
-            <WeatherCard type='country' info={country} weatherIconDesc={weatherIconDesc} />
-          </WeatherDeatailsCont>
-        </LeftWeatherCont>
+      {isLoading 
+        ?
+        <h1>Loading...</h1>
+        :
+        <WeatherInfoWrapper>
+          <LeftWeatherCont>
+            <WeatherInfo>
+              <h2>{weatherIconName}</h2>
+              <h1>{currentTemp}&deg;F</h1>
+              <h2>{cityName}</h2>
+            </WeatherInfo>
+            <WeatherDeatailsCont>
+              <WeatherCard type='feelLike' info={feelsLikeTemp} weatherIconDesc={weatherIconDesc} />
+              <WeatherCard type='max' info={maxTemp} weatherIconDesc={weatherIconDesc} />
+              <WeatherCard type='min' info={minTemp} weatherIconDesc={weatherIconDesc} />
+              <WeatherCard type='country' info={country} weatherIconDesc={weatherIconDesc} />
+            </WeatherDeatailsCont>
+          </LeftWeatherCont>
 
-        <RightWeatherCont>
-            <WeatherSideBar type='visibility' info={visibilityInFt} />
-            <WeatherSideBar type='wind' info={windSpeed} />
-            <WeatherSideBar type='clouds' info={cloundPercent} />
-            <WeatherSideBar type='humidity' info={humidityPercent} />
-        </RightWeatherCont>
-
-
-      </WeatherInfoWrapper>
+          <RightWeatherCont>
+              <WeatherSideBar type='visibility' info={visibilityInFt} />
+              <WeatherSideBar type='wind' info={windSpeed} />
+              <WeatherSideBar type='clouds' info={cloundPercent} />
+              <WeatherSideBar type='humidity' info={humidityPercent} />
+          </RightWeatherCont>
+        </WeatherInfoWrapper>
+      }
     </WeatherCont>
   )
 }
