@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-
+import getWeather from "../../components/utils/getWeather"
 import { Weather } from "../../components/Weather/Weather"
 
 const apiId = 'c280715d3252b3470097491122ae9ce1'
 
-const Home = () => {
+const Home = ({handleCurrentWeather}) => {
   const [weatherInfo, setWeatherInfo] = useState({})
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(false)
@@ -20,28 +20,28 @@ const Home = () => {
 
   const getCurrentCity = async (lat, lon) => {
     try {
+      setIsLoading(true)
       const {data} = await axios(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiId}`)
-      getCityWeather(data.name)
+
+      await getWeather(data.name, setIsLoading, setError, setWeatherInfo)
+      
+      setWeatherInfo((prevWeatherInfo) => {
+        handleCurrentWeather(prevWeatherInfo);
+        return prevWeatherInfo;
+      });
+
     } catch (error) {
+      setIsLoading(false)
+      setError(true)
       console.log(error)
     }
   }
 
-  const getCityWeather = async (city) => {
-    try {
-      setError(false)
-      setIsLoading(true)
-      const {data} = await axios(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}&units=imperial`)
-      setWeatherInfo(data)
-      setIsLoading(false)
-    } catch (error) {
-      setIsLoading(false)
-      setError(true)
-    }
-  }
+
 
   useEffect(() => {
     getCurrentLocation()
+
   }, [])
 
   return (

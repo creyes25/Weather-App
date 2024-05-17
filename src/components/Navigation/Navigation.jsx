@@ -9,12 +9,13 @@ import SearchInput from "../SearchInput/SearchInput";
 import CitiesList from "../CitiesList/CitiesList";
 
 
-const Navigation = () => {
-  const [cities, setCities] = useState([])
+const Navigation = ({homeWeather}) => {
+  const [citiesList, setCitiesList] = useState([])
+  const {sys, name} = homeWeather || {}
 
   const handleInputSubmision = (city) => {
-    if(cities.includes(city)) return
-    setCities([...cities, city])
+    if(citiesList.includes(city)) return
+    setCitiesList([...citiesList, city])
   }
 
 
@@ -23,17 +24,27 @@ const Navigation = () => {
       <HomeLinkCont>
         <Link to='/'>
           <HomeWrapper>
-            <CurrentCountryIcon></CurrentCountryIcon>
+            <CurrentCountryIcon>
+              <img
+                alt={sys ? sys.country : ''}
+                src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${sys ? sys.country : ''}.svg`}
+              />
+            </CurrentCountryIcon>
             <CurrentLocationWrapper>
-              <h5>Current Location</h5>
-              <h5>Home</h5>
+              <h4>Current Location:</h4>
+              <h5>
+                <span>{sys ? `${sys.country} - ` : 'Home' }</span>
+                <span>
+                  {name ? name : '' }
+                </span>
+              </h5>
             </CurrentLocationWrapper>
           </HomeWrapper>
         </Link>
       </HomeLinkCont>
       <SearchInput handleInputSubmision={handleInputSubmision} />
       <UnorderedList>
-        <CitiesList cities={cities} />
+        <CitiesList cities={citiesList} />
       </UnorderedList>
     </NavigationCont>
   )
