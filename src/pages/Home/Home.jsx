@@ -36,9 +36,6 @@ const Home = ({handleCurrentWeather}) => {
       console.log(error)
     }
   }
-
-
-
   useEffect(() => {
     getCurrentLocation()
 
@@ -46,12 +43,11 @@ const Home = ({handleCurrentWeather}) => {
 
   return (
     <div>
-      {isLoading && <div>Is Loading</div>}
       {error 
         ? 
       <h1>There was an error</h1> 
         : 
-      <Weather weatherInfo={weatherInfo} error={error} />}
+      <Weather weatherInfo={weatherInfo} isLoading={isLoading} />}
       
     </div>
   )
