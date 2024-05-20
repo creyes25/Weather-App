@@ -25,6 +25,12 @@ const Navigation = ({homeWeather, cityWeather}) => {
     setCitiesList([...citiesList, cityName])
   }
 
+  const handleRemoveCity = (cityName) => {
+    setCitiesList(prevCityList => {
+      return prevCityList.filter(city => city !== cityName)
+    })
+  }
+
 
   return (
     <NavigationCont>
@@ -51,7 +57,7 @@ const Navigation = ({homeWeather, cityWeather}) => {
       </HomeLinkCont>
       <SearchInput handleInputSubmision={handleInputSubmision} />
       <UnorderedList>
-        <CitiesList cities={citiesList} cityWeather={cityWeather} />
+        <CitiesList cities={citiesList} handleRemoveCity={handleRemoveCity} cityWeather={cityWeather} />
       </UnorderedList>
     </NavigationCont>
   )

@@ -6,7 +6,7 @@ import { CityLi, CityLiCont, CountryIconCont } from "./CitiesList.styles";
 
 
 
-const CitiesList = ({cities, cityWeather}) => {
+const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
   const [citiesList, setCitiesList] = useState([])
   const {sys, name} = cityWeather || {}
   
@@ -27,6 +27,13 @@ const CitiesList = ({cities, cityWeather}) => {
     });
   };
 
+  const handleClickRemove = (cityName) => {
+    setCitiesList(prevCityList => {
+      return prevCityList.filter(city => city.name !== cityName)
+    })
+    handleRemoveCity(cityName)
+  }
+
   useEffect(() => {
     addCityToList()
   }, [cities, cityWeather])
@@ -44,11 +51,11 @@ const CitiesList = ({cities, cityWeather}) => {
               />
             </CountryIconCont>
             {city.name}
-            <div>
-              <button>X</button>
-            </div>
           </CityLiCont>
         </Link>
+        <div>
+          <button onClick={() => handleClickRemove(city.name)}>X</button>
+        </div>
       </CityLi>
   
     ))}
