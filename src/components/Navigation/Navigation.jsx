@@ -9,13 +9,20 @@ import SearchInput from "../SearchInput/SearchInput";
 import CitiesList from "../CitiesList/CitiesList";
 
 
-const Navigation = ({homeWeather}) => {
+const Navigation = ({homeWeather, cityWeather}) => {
   const [citiesList, setCitiesList] = useState([])
   const {sys, name} = homeWeather || {}
 
   const handleInputSubmision = (city) => {
-    if(citiesList.includes(city)) return
-    setCitiesList([...citiesList, city])
+    const cityWordsArray = city.split(' ')
+    const formatedCity = cityWordsArray.map(word => {
+      return word[0].toUpperCase() + word.slice(1).toLowerCase()
+    })
+
+    const cityName = formatedCity.join(' ')
+
+    if(citiesList.includes(cityName)) return
+    setCitiesList([...citiesList, cityName])
   }
 
 
@@ -44,7 +51,7 @@ const Navigation = ({homeWeather}) => {
       </HomeLinkCont>
       <SearchInput handleInputSubmision={handleInputSubmision} />
       <UnorderedList>
-        <CitiesList cities={citiesList} />
+        <CitiesList cities={citiesList} cityWeather={cityWeather} />
       </UnorderedList>
     </NavigationCont>
   )

@@ -7,7 +7,7 @@ import { Weather } from "../../components/Weather/Weather"
 
 
 
-const City = () => {
+const City = ({handleCitytWeather}) => {
   let {cityId} = useParams()
   cityId = cityId.toLowerCase()
 
@@ -15,9 +15,19 @@ const City = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [error , setError] = useState(false)
 
+  const handleWeather = (info) => {
+    setWeatherInfo(info);
+    handleCitytWeather(info);
+  }
+
 
   useEffect(()=> {
-    getWeather(cityId, setIsLoading, setError, setWeatherInfo)
+    getWeather(cityId, setIsLoading, setError, handleWeather)
+    // setWeatherInfo((prevWeatherInfo) => {
+    //   // handleCitytWeather(prevWeatherInfo)
+    //   return prevWeatherInfo
+    // })
+    // handleCitytWeather(weatherInfo)
   }, [cityId])
 
 

@@ -9,18 +9,23 @@ import City from './pages/City/City';
 import { AppDiv } from './App.styles';
 
 function App() {
-  const [homeWeather, setHomwWeather] = useState(null)
+  const [homeWeather, setHomeWeather] = useState(null)
+  const [cityWeather, setCityWeather] = useState(null)
 
   const handleCurrentWeather = (current) => {
-    setHomwWeather(current)
+    setHomeWeather(current)
+  }
+
+  const handleCitytWeather = (current) => {
+    setCityWeather(current)
   }
 
   return (
     <AppDiv>
-      <Navigation homeWeather={homeWeather} />
+      <Navigation homeWeather={homeWeather} cityWeather={cityWeather} />
       <Routes>
         <Route path='/' element={<Home handleCurrentWeather={handleCurrentWeather} />} />
-        <Route path='/city/:cityId' element={<City />} />
+        <Route path='/city/:cityId' element={<City handleCitytWeather={handleCitytWeather}/>}  />
       </Routes>
     </AppDiv>
   );

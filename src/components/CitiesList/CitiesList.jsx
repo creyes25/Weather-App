@@ -6,32 +6,47 @@ import { CityLi, CityLiCont, CountryIconCont } from "./CitiesList.styles";
 
 
 
-const CitiesList = ({cities}) => {
-  const [formatedCities, setFormatedCities] = useState([])
+const CitiesList = ({cities, cityWeather}) => {
+  const [citiesList, setCitiesList] = useState([])
+  const {sys, name} = cityWeather || {}
   
-  const formatCityName = () => {
-    const formatedList = cities.map(city => {
-      return city[0].toUpperCase() + city.slice(1).toLowerCase()
-    })
-    
-    setFormatedCities([...formatedList])
-
-  }
+  const addCityToList = () => {
+    setCitiesList((prevCityList) => {
+      let updatedList = [...prevCityList];
+      cities.forEach((cityName) => {
+        const cityExists = updatedList.some((city) => city.name === cityName);
+        if (!cityExists) {
+          updatedList.push({ name: cityName, country: "" });
+        } else if (sys && name === cityName) {
+          updatedList = updatedList.map((city) =>
+            city.name === name ? { ...city, country: sys.country } : city
+          );
+        }
+      });
+      return updatedList;
+    });
+  };
 
   useEffect(() => {
-    formatCityName()
-  }, [cities])
+    addCityToList()
+  }, [cities, cityWeather])
 
   return (
     <>
-    {formatedCities.map(city => (
-      <CityLi>
-        <Link key={city} to={`/city/${city}`}>
+    {citiesList.map(city => (
+      <CityLi key={city.name}>
+        <Link  to={`/city/${city.name}`}>
           <CityLiCont>
             <CountryIconCont>
-              
+            <img
+                alt={city.country}
+                src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${city.country}.svg`}
+              />
             </CountryIconCont>
-            {city}
+            {city.name}
+            <div>
+              <button>X</button>
+            </div>
           </CityLiCont>
         </Link>
       </CityLi>

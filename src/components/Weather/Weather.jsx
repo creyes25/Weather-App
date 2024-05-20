@@ -36,6 +36,7 @@ export const Weather = ({ weatherInfo, isLoading }) => {
               <h1>{currentTemp}&deg;F</h1>
               <h2>{cityName}</h2>
             </WeatherInfo>
+            
             <WeatherDeatailsCont>
               <WeatherCard type='feelLike' info={feelsLikeTemp} weatherIconDesc={weatherIconDesc} />
               <WeatherCard type='max' info={maxTemp} weatherIconDesc={weatherIconDesc} />
