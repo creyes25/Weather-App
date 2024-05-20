@@ -23,17 +23,11 @@ const City = ({handleCitytWeather}) => {
 
   useEffect(()=> {
     getWeather(cityId, setIsLoading, setError, handleWeather)
-    // setWeatherInfo((prevWeatherInfo) => {
-    //   // handleCitytWeather(prevWeatherInfo)
-    //   return prevWeatherInfo
-    // })
-    // handleCitytWeather(weatherInfo)
   }, [cityId])
 
 
   return (
     <div>
-      {/* {isLoading && <div>Is Loading</div>} */}
       {error
         ? 
       <h1>There was an error</h1> 

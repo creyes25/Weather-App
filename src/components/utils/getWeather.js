@@ -6,6 +6,7 @@ const apiId = 'c280715d3252b3470097491122ae9ce1'
 const getWeather = async (cityId, isLoading, handleError, weatherInfo) => {
   try {
     isLoading(true)
+    handleError(false)
     const {data} = await axios(`${baseUrl}${cityId}&appid=${apiId}&units=imperial`)
     weatherInfo(data)
     isLoading(false)
