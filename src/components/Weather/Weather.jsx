@@ -1,9 +1,14 @@
 
+import { WeatherCont, WeatherInfoWrapper, LeftWeatherCont, RightWeatherCont, WeatherInfo, WeatherDeatailsCont } from "./Weather.styles"
+
+//images 
+import { mainBackgroundImg, boxBackground } from "./Weather.styles"
+
+// components
 import { Header } from "../Header/Header"
 import { WeatherCard } from "../WeatherCard/WeatherCard"
 import { WeatherSideBar } from "../WeatherSideBar/WeatherSideBar"
 
-import { WeatherCont, WeatherInfoWrapper, LeftWeatherCont, RightWeatherCont, WeatherInfo, WeatherDeatailsCont } from "./Weather.styles"
 
 export const Weather = ({ weatherInfo, isLoading }) => {
   const data = weatherInfo || {}
@@ -31,17 +36,42 @@ export const Weather = ({ weatherInfo, isLoading }) => {
         :
         <WeatherInfoWrapper>
           <LeftWeatherCont>
-            <WeatherInfo>
+            <WeatherInfo 
+              style={{backgroundImage: mainBackgroundImg(weatherIconName) }}
+            >
               <h2>{weatherIconName}</h2>
               <h1>{currentTemp}&deg;F</h1>
               <h2>{cityName}</h2>
             </WeatherInfo>
             
             <WeatherDeatailsCont>
-              <WeatherCard type='feelLike' info={feelsLikeTemp} weatherIconDesc={weatherIconDesc} />
-              <WeatherCard type='max' info={maxTemp} weatherIconDesc={weatherIconDesc} />
-              <WeatherCard type='min' info={minTemp} weatherIconDesc={weatherIconDesc} />
-              <WeatherCard type='country' info={country} weatherIconDesc={weatherIconDesc} />
+              <WeatherCard 
+                backgroundImage={boxBackground(weatherIconName)}
+                type='feelLike' 
+                info={feelsLikeTemp} 
+                weatherIconDesc={weatherIconDesc} 
+              />
+
+              <WeatherCard 
+                backgroundImage={boxBackground(weatherIconName)}
+                type='max' 
+                info={maxTemp} 
+                weatherIconDesc={weatherIconDesc} 
+                />
+
+              <WeatherCard 
+                backgroundImage={boxBackground(weatherIconName)}
+                type='min' 
+                info={minTemp} 
+                weatherIconDesc={weatherIconDesc} 
+                />
+
+              <WeatherCard
+                backgroundImage={boxBackground(weatherIconName)} 
+                type='country' 
+                info={country} 
+                weatherIconDesc={weatherIconDesc} 
+              />
             </WeatherDeatailsCont>
           </LeftWeatherCont>
 

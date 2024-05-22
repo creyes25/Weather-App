@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { WeatherCardCont } from "./WeatherCard.styles"
 
-export const WeatherCard = ({type, info, weatherIconDesc}) => {
+export const WeatherCard = ({backgroundImage,type, info, weatherIconDesc}) => {
   const [title, setTitle] = useState('')
 
   const getTitle = (type) => {
@@ -29,7 +29,7 @@ export const WeatherCard = ({type, info, weatherIconDesc}) => {
   },[type])
 
   return (
-    <WeatherCardCont>
+    <WeatherCardCont style={{backgroundImage: backgroundImage}}>
       <h3>{title}</h3>
       {(title !== 'Country') 
       ?

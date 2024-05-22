@@ -2,11 +2,16 @@ import styled from "styled-components";
 
 export const WeatherCardCont = styled.div`
   width: 25%;
-  border: 1px solid red;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 2px black;
 
+  h2,h3,h4 {
+    font-size: 1.3em;
+  }
 
   @media screen and (max-width: 1180px) {
-    width: 40%
+    width: 47%
   }
 
   @media screen and (max-width: 800px) {

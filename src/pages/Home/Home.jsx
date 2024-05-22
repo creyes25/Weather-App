@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import getWeather from "../../components/utils/getWeather"
+import getWeather from "../../utils/getWeather"
 import { Weather } from "../../components/Weather/Weather"
 
 const apiId = 'c280715d3252b3470097491122ae9ce1'

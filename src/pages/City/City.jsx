@@ -1,11 +1,8 @@
 import { useState,useEffect } from "react"
 import { useParams } from "react-router-dom"
 import axios from 'axios'
-import getWeather from "../../components/utils/getWeather"
+import getWeather from "../../utils/getWeather"
 import { Weather } from "../../components/Weather/Weather"
-
-
-
 
 const City = ({handleCitytWeather}) => {
   let {cityId} = useParams()

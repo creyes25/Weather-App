@@ -1,5 +1,60 @@
 import styled from "styled-components";
 
+import { 
+  mainClear,
+  mainClouds,
+  mainRain,
+  mainDrizzle,
+  mainThunder,
+  mainSnow,
+  mainAtmosphere,
+  clearBox,
+  cloudBox,
+  rainBox,
+  drizzleBox,
+  thunderBox,
+  snowBox,
+  atmosphereBox
+} from "../../images/images";
+
+export const mainBackgroundImg = (weather) => {
+  switch (weather) {
+    case 'Clear':
+      return `url(${mainClear})`
+    case 'Clouds':
+      return `url(${mainClouds})`;
+    case 'Rain':
+      return `url(${mainRain})`;
+    case 'Drizzle':
+      return `url(${mainDrizzle})`;
+    case 'Thunderstorm':
+      return `url(${mainThunder})`;
+    case 'Snow':
+      return `url(${mainSnow})`;
+    default:
+      return `url(${mainAtmosphere})`;
+  }
+}
+
+export const boxBackground = (weather) => {
+  switch (weather) {
+    case 'Clear':
+      return `url(${clearBox})`
+    case 'Clouds':
+      return `url(${cloudBox})`;
+    case 'Rain':
+      return `url(${rainBox})`;
+    case 'Drizzle':
+      return `url(${drizzleBox})`;
+    case 'Thunderstorm':
+      return `url(${thunderBox})`;
+    case 'Snow':
+      return `url(${snowBox})`;
+    default:
+      return `url(${atmosphereBox})`;
+  }
+}
+
 export const WeatherCont = styled.div`
   padding: 10px 20px 10px 0;
   width: 100%;
@@ -41,13 +96,16 @@ export const RightWeatherCont = styled.div`
 `
 
 export const WeatherInfo = styled.div`
-  border: 1px solid blue;
   text-align: center;
   line-height: 2.5em;
   height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: top left ;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 2px black;
 
   h2,h1 {
     margin: 12px;
