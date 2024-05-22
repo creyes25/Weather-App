@@ -44,12 +44,14 @@ const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
       <CityLi key={city.name}>
         <Link  to={`/city/${city.name}`}>
           <CityLiCont>
+          {city.country !== '' &&
             <CountryIconCont>
             <img
                 alt={city.country}
                 src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${city.country}.svg`}
               />
             </CountryIconCont>
+          }
             {city.name}
           </CityLiCont>
         </Link>
