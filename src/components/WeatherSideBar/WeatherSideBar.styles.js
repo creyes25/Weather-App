@@ -6,7 +6,7 @@ export const SideBarCont = styled.div`
 
   padding: 5px;
   p {
-    margin: 2px;
+    margin: 10px 2px;
   }
 
   @media screen and (max-width: 1180px) {
@@ -24,8 +24,10 @@ export const SideBarCont = styled.div`
 `
 export const SideBarInfo = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 3em;
   align-items: center;
+  margin-top: 10px;
 
   h2 {
     margin: 10px 0;
@@ -38,16 +40,41 @@ export const SideBarInfo = styled.div`
 
   @media screen and (max-width: 950px) {
     flex-direction: column;
-    
+    gap: 0;
   }
 
   @media screen and (max-width: 800px) {
-    gap: 0;
     h2 {
       margin: 5px 0;
     }
   }
+`
 
+export const IconCont = styled.div`
+  width: 50px;
+  height: 50px;
+  padding: 2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-top: 10px;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 1180px) {
+    
+  }
+
+  @media screen and (max-width: 950px) {
+    img {
+      height: 80%;
+      width: 80%;
+    }
+  }
 
 `
 

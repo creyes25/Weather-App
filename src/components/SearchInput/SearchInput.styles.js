@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import {MagnifyingGlassIcon} from '@heroicons/react/24/solid'
 
 
+
 export const InputContainter = styled.div`
   margin: 30px auto;
   border-radius : 10px;
