@@ -32,5 +32,13 @@ export const CountryIconCont = styled.div`
   background-color: #F2F2F2;
   height: 100%;
   width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 100%;
+    width: 95%;
+  }
 
 `

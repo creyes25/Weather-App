@@ -53,11 +53,12 @@ const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
             </CountryIconCont>
           }
             {city.name}
+          <div>
+            <button onClick={() => handleClickRemove(city.name)}>X</button>
+          </div>
           </CityLiCont>
         </Link>
-        <div>
-          <button onClick={() => handleClickRemove(city.name)}>X</button>
-        </div>
+
       </CityLi>
   
     ))}

@@ -46,8 +46,17 @@ export const HomeWrapper = styled.div`
 
 export const CurrentCountryIcon = styled.div`
   background-color: #F2F2F2;
-  height: 50px;
   width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+
+
+  img {
+    width: 95%;
+    height: 95%;
+  }
 `
 
 export const CurrentLocationWrapper = styled.div`
