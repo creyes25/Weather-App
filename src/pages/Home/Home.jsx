@@ -48,7 +48,6 @@ const Home = ({handleCurrentWeather}) => {
       <h1>There was an error</h1> 
         : 
       <Weather weatherInfo={weatherInfo} isLoading={isLoading} />}
-      
     </div>
   )
 }

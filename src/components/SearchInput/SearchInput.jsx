@@ -20,16 +20,15 @@ const SearchInput = ({handleInputSubmision}) => {
   return (
     <form onSubmit={handleSubmit}>
       <InputContainter>
-      <SearchIcon>
-        <Icon />
-
-      </SearchIcon>
-
+        <SearchIcon>
+          <Icon />
+        </SearchIcon>
 
         <Input type="text"
         placeholder="Search for location..."
         value={inputValue}
         onChange={handleChange} />
+        
       </InputContainter>
     </form>
   )

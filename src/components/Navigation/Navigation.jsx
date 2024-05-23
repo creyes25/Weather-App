@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// import Home from "../../pages/Home/Home";
 
 import {NavigationCont, UnorderedList, HomeLinkCont, HomeWrapper, CurrentLocationWrapper, CurrentCountryIcon} from './Navigation.styles'
 
@@ -30,7 +29,6 @@ const Navigation = ({homeWeather, cityWeather}) => {
       return prevCityList.filter(city => city !== cityName)
     })
   }
-
 
   return (
     <NavigationCont>

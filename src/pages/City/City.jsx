@@ -1,6 +1,5 @@
 import { useState,useEffect } from "react"
 import { useParams } from "react-router-dom"
-import axios from 'axios'
 import getWeather from "../../utils/getWeather"
 import { Weather } from "../../components/Weather/Weather"
 
@@ -17,11 +16,9 @@ const City = ({handleCitytWeather}) => {
     handleCitytWeather(info);
   }
 
-
   useEffect(()=> {
     getWeather(cityId, setIsLoading, setError, handleWeather)
   }, [cityId])
-
 
   return (
     <div>
@@ -34,6 +31,5 @@ const City = ({handleCitytWeather}) => {
     </div>
   )
 }
-
 
 export default City

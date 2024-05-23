@@ -16,7 +16,6 @@ export const UnorderedList = styled.ul`
 `
 
 export const HomeLinkCont = styled.div`
-  // border: 1px solid red;
   height: 45px;
   padding: 5px;
   display: flex;
@@ -63,5 +62,4 @@ export const CurrentLocationWrapper = styled.div`
   h5 {
     margin: 0;
   }
-
 `

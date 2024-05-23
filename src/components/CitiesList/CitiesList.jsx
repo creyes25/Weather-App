@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { CityLi, CityLiCont, CountryIconCont, EmptyDiv } from "./CitiesList.styles";
 
 
-
 const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
   const [citiesList, setCitiesList] = useState([])
   const {sys, name} = cityWeather || {}

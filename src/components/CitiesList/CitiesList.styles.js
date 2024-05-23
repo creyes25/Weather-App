@@ -16,7 +16,6 @@ export const CityLi = styled.li`
 `
 
 export const CityLiCont = styled.div`
-  // border: 1px solid red;
   width: 250px;
   height: 40px;
   padding: 5px;
