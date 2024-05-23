@@ -28,3 +28,19 @@ export const thunderBox = 'https://images.unsplash.com/photo-1583459094467-e0db1
 export const snowBox = 'https://images.unsplash.com/photo-1551582045-6ec9c11d8697?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c25vd3xlbnwwfHwwfHx8MA%3D%3D'
 
 export const atmosphereBox = 'https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWlzdHxlbnwwfHwwfHx8MA%3D%3D'
+
+
+export const clearIcon = 'https://cdn-icons-mp4.flaticon.com/512/6455/6455017.mp4'
+
+export const cloudsIcon = 'https://cdn-icons-mp4.flaticon.com/512/6455/6455024.mp4'
+
+export const rainIcon = 'https://cdn-icons-mp4.flaticon.com/512/6455/6455055.mp4'
+
+export const drizzleIcon = 'https://cdn-icons-mp4.flaticon.com/512/6455/6455029.mp4'
+
+export const thunderIcon = 'https://cdn-icons-mp4.flaticon.com/512/6455/6455012.mp4'
+
+export const snowIcon = 'https://cdn-icons-mp4.flaticon.com/512/6455/6455056.mp4'
+
+
+export const atmosphereIcon = 'https://cdn-icons-mp4.flaticon.com/512/6454/6454995.mp4'

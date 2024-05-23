@@ -14,7 +14,14 @@ import {
   drizzleBox,
   thunderBox,
   snowBox,
-  atmosphereBox
+  atmosphereBox,
+  clearIcon,
+  cloudsIcon,
+  rainIcon,
+  drizzleIcon,
+  thunderIcon,
+  snowIcon,
+  atmosphereIcon
 } from "../../images/images";
 
 export const mainBackgroundImg = (weather) => {
@@ -33,6 +40,25 @@ export const mainBackgroundImg = (weather) => {
       return `url(${mainSnow})`;
     default:
       return `url(${mainAtmosphere})`;
+  }
+}
+
+export const weatherIcon = (weather) => {
+  switch (weather) {
+    case 'Clear':
+      return clearIcon;
+    case 'Clouds':
+      return cloudsIcon;
+    case 'Rain':
+      return rainIcon;
+    case 'Drizzle':
+      return drizzleIcon;
+    case 'Thunderstorm':
+      return thunderIcon;
+    case 'Snow':
+      return snowIcon;
+    default:
+      return atmosphereIcon;
   }
 }
 
@@ -105,10 +131,31 @@ export const WeatherInfo = styled.div`
   background: top left ;
   background-size: cover;
   color: white;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 2px 2px 2px black;
 
   h2,h1 {
     margin: 12px;
+  }
+  
+  h1 {
+    font-size: 3em;
+  }
+
+  div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6;
+    margin: 12px auto;  
+  }
+
+  video {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px black;
   }
 
   @media screen and (max-width: 800px) {

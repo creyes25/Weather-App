@@ -2,7 +2,7 @@
 import { WeatherCont, WeatherInfoWrapper, LeftWeatherCont, RightWeatherCont, WeatherInfo, WeatherDeatailsCont } from "./Weather.styles"
 
 //images 
-import { mainBackgroundImg, boxBackground } from "./Weather.styles"
+import { mainBackgroundImg, boxBackground, weatherIcon } from "./Weather.styles"
 
 // components
 import { Header } from "../Header/Header"
@@ -38,8 +38,16 @@ export const Weather = ({ weatherInfo, isLoading }) => {
           <LeftWeatherCont>
             <WeatherInfo 
               style={{backgroundImage: mainBackgroundImg(weatherIconName) }}
-            >
-              <h2>{weatherIconName}</h2>
+            > 
+              <div>
+                <video 
+                  src={weatherIcon(weatherIconName)}
+                  autoPlay
+                  loop
+                  muted
+                />
+                <h2>{weatherIconName}</h2>
+              </div>
               <h1>{currentTemp}&deg;F</h1>
               <h2>{cityName}</h2>
             </WeatherInfo>

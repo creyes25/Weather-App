@@ -4,7 +4,7 @@ export const WeatherCardCont = styled.div`
   width: 25%;
   background-size: cover;
   color: white;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 2px 2px 2px black;
 
   h2,h3,h4 {
     font-size: 1.3em;
