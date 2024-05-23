@@ -26,6 +26,18 @@ export const CityLiCont = styled.div`
   align-items: center;
   gap: 1em;
 
+  div {
+    
+  }
+`
+
+export const EmptyDiv = styled.div`
+  height: 100%;
+  width: 20%;
+  background: url('https://cdn-icons-png.flaticon.com/128/3530/3530009.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
 `
 
 export const CountryIconCont = styled.div`

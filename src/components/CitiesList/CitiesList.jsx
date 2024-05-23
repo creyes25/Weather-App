@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // styles
-import { CityLi, CityLiCont, CountryIconCont } from "./CitiesList.styles";
+import { CityLi, CityLiCont, CountryIconCont, EmptyDiv } from "./CitiesList.styles";
 
 
 
@@ -44,7 +44,7 @@ const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
       <CityLi key={city.name}>
         <Link  to={`/city/${city.name}`}>
           <CityLiCont>
-          {city.country !== '' &&
+          {city.country === '' ? <EmptyDiv></EmptyDiv> :
             <CountryIconCont>
             <img
                 alt={city.country}
