@@ -41,7 +41,14 @@ const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
     <>
     {citiesList.map(city => (
       <CityLi key={city.name}>
-        <Link  to={`/city/${city.name}`}>
+        <Link  
+          to={`/city/${city.name}`}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
           <CityLiCont>
           {city.country === '' ? <EmptyDiv></EmptyDiv> :
             <CountryIconCont>
@@ -52,10 +59,15 @@ const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
             </CountryIconCont>
           }
             {city.name}
-          <div>
-            <button onClick={() => handleClickRemove(city.name)}>X</button>
-          </div>
           </CityLiCont>
+          <div className="btn-cont">
+            <button className="remove-btn" onClick={() => handleClickRemove(city.name)}>
+              <img 
+                src="https://cdn-icons-gif.flaticon.com/8121/8121324.gif" 
+                alt="trash button"
+              />
+            </button>
+          </div>
         </Link>
 
       </CityLi>

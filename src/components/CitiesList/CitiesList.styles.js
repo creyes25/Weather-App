@@ -4,6 +4,8 @@ export const CityLi = styled.li`
   margin: 15px auto;
   padding: 0;
   cursor: pointer;
+  display: flex;
+  
 
   a {
     text-decoration: none;
@@ -13,10 +15,38 @@ export const CityLi = styled.li`
     text-decoration: none; 
     color: black;
   }
+
+  .btn-cont {
+    width: 50px;
+    height: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  
+  }
+
+  &:hover .btn-cont {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .remove-btn {
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .remove-btn img {
+    width: 100%;
+    cursor: pointer;
+  }
+
 `
 
 export const CityLiCont = styled.div`
-  width: 250px;
+  width: 240px;
   height: 40px;
   padding: 5px;
   margin: auto;
@@ -25,9 +55,8 @@ export const CityLiCont = styled.div`
   align-items: center;
   gap: 1em;
 
-  div {
-    
-  }
+  
+
 `
 
 export const EmptyDiv = styled.div`
