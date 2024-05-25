@@ -1,11 +1,42 @@
 import styled from "styled-components";
 
+export const Navigation = styled.div`
+
+`
+
 export const NavigationCont = styled.nav`
   max-width: 350px;
   margin-left: 15px;
   padding: 10px;
   text-align: center;
   border-right: 1px solid #F2F2F2;
+
+  @media screen and (max-width: 800px) {
+    display: ${({isOpen}) => (isOpen ? 'block' : 'none')};
+    position: absolute;
+    background: white;
+    height: 95vh;
+    left: 0;
+    top: 35px;
+    margin: 0;
+  }
+`
+
+export const BurgerIcon = styled.div`
+  display: none;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 5px;
+  cursor: pointer;
+
+  img {
+    width: 100%
+  }
+
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
 `
 
 

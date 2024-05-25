@@ -43,6 +43,13 @@ export const CityLi = styled.li`
     cursor: pointer;
   }
 
+  @media screen and (max-width: 800px) {
+    .btn-cont {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
 `
 
 export const CityLiCont = styled.div`
