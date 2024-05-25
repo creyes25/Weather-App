@@ -11,7 +11,7 @@ export const HeaderCont = styled.div`
 
   h1 {
     text-align: left;
-    width: 500px;
+    width: 100%;
   }
 
   p {
@@ -21,6 +21,13 @@ export const HeaderCont = styled.div`
   @media screen and (max-width: 1220px ) {
     p {
       display: none;
+    }
+  }
+
+  @media screen and (max-width: 500px ) {
+    h1 {
+      font-size: 1.2em;
+      text-align: center;
     }
   }
 `

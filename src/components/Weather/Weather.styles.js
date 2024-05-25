@@ -175,4 +175,11 @@ export const WeatherDeatailsCont = styled.div`
   @media screen and (max-width: 1180px) {
     flex-wrap: wrap;
   }
+
+  @media screen and (max-width: 500px) {
+    gap: 1em;
+    // justify-content: center;
+    // flex-wrap: nowrap;
+    gap: 0.5em;
+  }
 `
