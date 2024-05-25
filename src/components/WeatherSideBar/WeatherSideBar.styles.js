@@ -58,15 +58,10 @@ export const IconCont = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  // margin-top: 10px;
 
   img {
     height: 100%;
     width: 100%;
-  }
-
-  @media screen and (max-width: 1180px) {
-    
   }
 
   @media screen and (max-width: 950px) {
@@ -75,6 +70,5 @@ export const IconCont = styled.div`
       width: 80%;
     }
   }
-
 `
 

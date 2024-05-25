@@ -9,7 +9,6 @@ import { Header } from "../Header/Header"
 import { WeatherCard } from "../WeatherCard/WeatherCard"
 import { WeatherSideBar } from "../WeatherSideBar/WeatherSideBar"
 
-
 export const Weather = ({ weatherInfo, isLoading }) => {
   const data = weatherInfo || {}
   const { name, main, sys, weather, wind, visibility, clouds } = data || {}

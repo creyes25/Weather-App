@@ -6,7 +6,6 @@ export const CityLi = styled.li`
   cursor: pointer;
   display: flex;
   
-
   a {
     text-decoration: none;
   }
@@ -22,7 +21,6 @@ export const CityLi = styled.li`
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
-  
   }
 
   &:hover .btn-cont {
@@ -61,9 +59,6 @@ export const CityLiCont = styled.div`
   justify-content: left;
   align-items: center;
   gap: 1em;
-
-  
-
 `
 
 export const EmptyDiv = styled.div`
@@ -72,7 +67,6 @@ export const EmptyDiv = styled.div`
   background: url('https://cdn-icons-png.flaticon.com/128/3530/3530009.png');
   background-size: contain;
   background-repeat: no-repeat;
-
 `
 
 export const CountryIconCont = styled.div`

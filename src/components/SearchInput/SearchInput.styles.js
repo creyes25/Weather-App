@@ -33,7 +33,6 @@ export const SearchIcon = styled.div`
   width: 10%;
   height: 10%;
   margin-left: 5px;
-
 `
 
 export const Icon = styled(MagnifyingGlassIcon)`

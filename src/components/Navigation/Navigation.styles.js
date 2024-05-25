@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const Navigation = styled.div`
-
-`
-
 export const NavigationCont = styled.nav`
   max-width: 350px;
   margin-left: 15px;
@@ -53,7 +49,6 @@ export const HomeLinkCont = styled.div`
   align-items: center;
   margin: 10px auto;
 
-
   a {
     text-decoration: none;
     width: 100%;
@@ -71,7 +66,6 @@ export const HomeWrapper = styled.div`
   align-items: center;
   width: 100%;
   gap: 1em;
-
 `
 
 export const CurrentCountryIcon = styled.div`
@@ -81,7 +75,6 @@ export const CurrentCountryIcon = styled.div`
   align-items: center;
   justify-content: center;
   padding: 2px;
-
 
   img {
     width: 95%;

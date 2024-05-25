@@ -161,7 +161,6 @@ export const WeatherInfo = styled.div`
   @media screen and (max-width: 800px) {
     height: 250px;
   }
-
 `
 
 export const WeatherDeatailsCont = styled.div`
@@ -178,8 +177,6 @@ export const WeatherDeatailsCont = styled.div`
 
   @media screen and (max-width: 500px) {
     gap: 1em;
-    // justify-content: center;
-    // flex-wrap: nowrap;
     gap: 0.5em;
   }
 `

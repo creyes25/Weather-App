@@ -3,7 +3,6 @@ import { useState } from "react"
 // styles
 import { InputContainter, Input, SearchIcon, Icon } from "./SearchInput.styles"
 
-
 const SearchInput = ({handleInputSubmision}) => {
   const [inputValue, setInputValue] = useState('')
 
@@ -28,7 +27,7 @@ const SearchInput = ({handleInputSubmision}) => {
         placeholder="Search for location..."
         value={inputValue}
         onChange={handleChange} />
-        
+
       </InputContainter>
     </form>
   )

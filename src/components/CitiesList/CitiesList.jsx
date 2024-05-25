@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 // styles
 import { CityLi, CityLiCont, CountryIconCont, EmptyDiv } from "./CitiesList.styles";
 
-
 const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
   const [citiesList, setCitiesList] = useState([])
   const {sys, name} = cityWeather || {}
@@ -69,7 +68,6 @@ const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
             </button>
           </div>
         </Link>
-
       </CityLi>
   
     ))}

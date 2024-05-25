@@ -3,10 +3,8 @@ import { useState } from "react";
 
 import {BurgerIcon, NavigationCont, UnorderedList, HomeLinkCont, HomeWrapper, CurrentLocationWrapper, CurrentCountryIcon} from './Navigation.styles'
 
-
 import SearchInput from "../SearchInput/SearchInput";
 import CitiesList from "../CitiesList/CitiesList";
-
 
 const Navigation = ({homeWeather, cityWeather}) => {
   const [menuOpen, setMenuOpen] = useState(false)
