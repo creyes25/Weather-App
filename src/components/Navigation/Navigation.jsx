@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+// styles
 import {BurgerIcon, NavigationCont, UnorderedList, HomeLinkCont, HomeWrapper, CurrentLocationWrapper, CurrentCountryIcon} from './Navigation.styles'
 
+// components
 import SearchInput from "../SearchInput/SearchInput";
 import CitiesList from "../CitiesList/CitiesList";
 
 const Navigation = ({homeWeather, cityWeather}) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [citiesList, setCitiesList] = useState([])
+
   const {sys, name} = homeWeather || {}
 
   const handleBurgerClick = () => {
@@ -28,9 +31,9 @@ const Navigation = ({homeWeather, cityWeather}) => {
   }
 
   const handleRemoveCity = (cityName) => {
-    setCitiesList(prevCityList => {
-      return prevCityList.filter(city => city !== cityName)
-    })
+    setCitiesList(prevCityList => 
+      prevCityList.filter(city => city !== cityName)
+    )
   }
 
   return (
