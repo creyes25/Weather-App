@@ -11,7 +11,6 @@ import CitiesList from "../CitiesList/CitiesList";
 const Navigation = ({homeWeather, cityWeather}) => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [citiesList, setCitiesList] = useState([])
-
   const {sys, name} = homeWeather || {}
 
   const handleBurgerClick = () => {
@@ -62,7 +61,12 @@ const Navigation = ({homeWeather, cityWeather}) => {
         </HomeLinkCont>
         <SearchInput handleInputSubmision={handleInputSubmision} />
         <UnorderedList>
-          <CitiesList cities={citiesList} handleRemoveCity={handleRemoveCity} cityWeather={cityWeather} />
+          <CitiesList 
+            cities={citiesList} 
+            handleRemoveCity={handleRemoveCity} 
+            cityWeather={cityWeather} 
+            handleBurgerClick={handleBurgerClick}
+          />
         </UnorderedList>
       </NavigationCont>
       <BurgerIcon onClick={handleBurgerClick} >

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // styles
 import { CityLi, CityLiCont, CountryIconCont, EmptyDiv } from "./CitiesList.styles";
 
-const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
+const CitiesList = ({cities, cityWeather, handleRemoveCity, handleBurgerClick}) => {
   const [citiesList, setCitiesList] = useState([])
   const {sys, name} = cityWeather || {}
   
@@ -47,6 +47,7 @@ const CitiesList = ({cities, cityWeather, handleRemoveCity}) => {
             justifyContent: 'center',
             alignItems: 'center'
           }}
+          onClick={handleBurgerClick}
         >
           <CityLiCont>
           {city.country === '' ? <EmptyDiv></EmptyDiv> :
