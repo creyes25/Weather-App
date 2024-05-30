@@ -38,6 +38,7 @@ const Navigation = ({ homeWeather }) => {
   };
 
   const addCityToList = () => {
+    // checks if there was no error in api call and if city info is not undefined
     if (cityInfo && !error) {
       setCitiesList((prevCityList) => {
         const cityExists = prevCityList.some(
