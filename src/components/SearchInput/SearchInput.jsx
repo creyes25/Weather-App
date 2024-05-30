@@ -33,7 +33,7 @@ const SearchInput = ({ handleInputSubmision }) => {
 
         <Input
           type="text"
-          placeholder="Search for location..."
+          placeholder="Search for city..."
           value={inputValue}
           onChange={handleChange}
         />
