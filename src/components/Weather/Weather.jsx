@@ -43,6 +43,7 @@ export const Weather = ({ weatherInfo, isLoading }) => {
                   src={weatherIcon(weatherIconName)}
                   autoPlay
                   loop
+                  playsInline
                   muted
                 />
                 <h2>{weatherIconName}</h2>
