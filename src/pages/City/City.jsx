@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import getWeather from "../../utils/getWeather"
 import { Weather } from "../../components/Weather/Weather"
 
-const City = ({handleCitytWeather}) => {
+const City = () => {
   let {cityId} = useParams()
   cityId = cityId.toLowerCase()
 
@@ -13,7 +13,6 @@ const City = ({handleCitytWeather}) => {
 
   const handleWeather = (info) => {
     setWeatherInfo(info);
-    handleCitytWeather(info);
   }
 
   useEffect(()=> {
